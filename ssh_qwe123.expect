@@ -1,0 +1,12 @@
+#!/usr/local/bin/expect -f
+spawn ssh -F /etc/ssh/ssh_config [lrange $argv 0 1]
+expect {
+	"ssh: connect to host" { exit 254; } 
+	"Permission denied (publickey,gssapi-with-mic,password)." { exit 255 }
+	"Are you sure you want to continue connecting" { send "yes\n"}
+	 "*assword*:" { send "qwe123\n"}
+}
+expect {
+        "*assword*:" { exit 255 } 
+        "*:" {send "exit\n" ;exit 256}
+}

@@ -1,0 +1,13 @@
+#!/usr/bin/perl
+
+$apg="/usr/local/bin/apg -M NCL -m 8 -x 12";
+$newpass="1";
+
+while ( $newpass =~ m/(^[A-Z])|([0-9]$)/ ) {
+	open(APG, "$apg |");
+	$newpass = <APG>;
+	close(APG);
+}
+chomp $newpass;
+print $newpass;
+
