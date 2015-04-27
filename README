@@ -30,4 +30,4 @@ Usage:
                 -f <file> get server list from file
         Examples (for dummies):
                 mnt.pl -l "server.domain.ru,server2.domain.ru" -c "echo hello world"
-                mnt.pl -f /home/mnt/lists/all -a -u NewAdmin -C "Join Smith" -s /bin/bash -
+                mnt.pl -f /home/mnt/lists/all -a -u NewAdmin -C "Join Smith" -s /bin/bash -r
