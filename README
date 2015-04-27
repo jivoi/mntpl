@@ -1,5 +1,33 @@
-mnt.pl
+########################
+mnt.pl - one cmd to rule them all
+########################
 
-one cmd to rule them all
-
-
+# ./mnt.pl
+Error: Action not present
+Usage:
+        Actions:
+                -a add user
+                -d remove user
+                -b block user
+                -c run command
+                -sh run local script on remote server (/bin/sh)
+                -sudosh run local script with root privileges on remote server (/bin/sh)
+                -P change password
+                -U update cache
+                -I install cvsbackup
+                -D check users for default password (qwe123), need /home/mnt/bin/ssh_qwe123.expect
+                -X update stats for web
+        Args:
+                -u <username> set username
+                -p <password> set password (default: random generated)
+                -s <shell> shell (default /bin/csh)
+                -C <comment> comments for user,typicaly realname (default "New user")
+                -r set root privilegies for new user (default NO)
+                -e do not expire password (all passwords are expired by default)
+                -h this page
+        Server lists:
+                -l <servre1,server2,...> get from command line
+                -f <file> get server list from file
+        Examples (for dummies):
+                mnt.pl -l "server.domain.ru,server2.domain.ru" -c "echo hello world"
+                mnt.pl -f /home/mnt/lists/all -a -u NewAdmin -C "Join Smith" -s /bin/bash -
